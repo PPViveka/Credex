@@ -1,0 +1,299 @@
+.formContainer {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px;
+  border-radius: 24px;
+  background: rgba(12, 16, 27, 0.6);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.stepIndicator {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.stepIndicator::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.08);
+  z-index: 1;
+  transform: translateY(-50%);
+}
+
+.stepLineProgress {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 2px;
+  background: var(--accent-mint);
+  z-index: 1;
+  transform: translateY(-50%);
+  transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.stepNode {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--bg-secondary);
+  border: 2px solid var(--border-strong);
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-family: var(--font-title);
+  font-size: 0.9rem;
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.stepNodeActive {
+  background: var(--bg-primary);
+  border-color: var(--accent-mint);
+  color: var(--accent-mint);
+  box-shadow: 0 0 15px rgba(0, 242, 153, 0.2);
+}
+
+.stepNodeDone {
+  background: var(--accent-mint);
+  border-color: var(--accent-mint);
+  color: var(--bg-primary);
+}
+
+.stepLabel {
+  position: absolute;
+  bottom: -25px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  white-space: nowrap;
+  color: var(--text-muted);
+  transition: color 0.3s ease;
+}
+
+.stepLabelActive {
+  color: var(--text-primary);
+}
+
+/* Step Content Layouts */
+.stepTitle {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #fff;
+  font-family: var(--font-title);
+}
+
+.stepSubtitle {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-bottom: 30px;
+}
+
+.fieldGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+@media (max-width: 600px) {
+  .fieldGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Toggle Grid for Selection */
+.toggleGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.toolCard {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+  position: relative;
+  text-align: center;
+}
+
+.toolCard:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.toolCardActive {
+  background: rgba(0, 242, 153, 0.03);
+  border-color: var(--accent-mint-border);
+  box-shadow: var(--shadow-mint);
+}
+
+.toolIcon {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.toolCardActive .toolIcon {
+  background: rgba(0, 242, 153, 0.1);
+  color: var(--accent-mint);
+  transform: scale(1.05);
+}
+
+.toolName {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+}
+
+.checkboxIndicator {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border-strong);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.toolCardActive .checkboxIndicator {
+  border-color: var(--accent-mint);
+  background: var(--accent-mint);
+}
+
+.checkboxIndicator::after {
+  content: "✓";
+  color: var(--bg-primary);
+  font-size: 10px;
+  font-weight: 800;
+  display: none;
+}
+
+.toolCardActive .checkboxIndicator::after {
+  display: block;
+}
+
+/* Tool Configurations Table Rows */
+.configList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-height: 450px;
+  overflow-y: auto;
+  padding-right: 8px;
+  margin-bottom: 24px;
+}
+
+.configCard {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1.5fr 2fr 1fr 1.2fr;
+  align-items: center;
+  gap: 16px;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .configCard {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+.configCardHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.configToolIcon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: var(--accent-mint);
+}
+
+.configToolName {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.spendHint {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+/* Footer Controls */
+.btnRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 24px;
+}
+
+.emptyState {
+  padding: 40px 0;
+  text-align: center;
+  color: var(--text-secondary);
+  border: 1px dashed var(--border-strong);
+  border-radius: 16px;
+  margin-bottom: 24px;
+}
