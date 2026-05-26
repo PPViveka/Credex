@@ -21,12 +21,12 @@ This document contains the finalized, copywriter-polished marketing copy and use
 *   *Design Focus:* Pulsing mint green background button with immediate hover feedback.
 
 ### 4. Social Proof Block (Mocked Indicators)
-*   **Testimonial 1 (YC Pre-Seed):**
-    > *"Credex saved us $1,240/month in duplicate Claude and ChatGPT seats within 10 seconds of running their audit. Highly recommend for any lean team."*
-    > — **Siddharth S.**, CTO at Vektor AI (Seed Stage, 7 devs) [MOCKED]
-*   **Testimonial 2 (Series A DevTool):**
-    > *"We realized half our developers were expensing individual Cursor Pro licenses on top of our enterprise GitHub Copilot subscription. This tool resolved the compliance mess in one click."*
-    > — **Elena R.**, VP of Engineering at FluxCore (Series A, 20 devs) [MOCKED]
+*   **Testimonial 1 (Hackathon Squad):**
+    > *"As student developers, we were stacking ChatGPT Plus and Cursor Pro subscriptions without checking overlap. This free audit saved us cash instantly!"*
+    > — **Siddharth Rao**, CSE Student & Hackathon Builder, Bengaluru [MOCKED]
+*   **Testimonial 2 (Tech Company):**
+    > *"Different developers on our backend team were expensing Cursor, Copilot, and ChatGPT on separate cards. This tool resolved the compliance and duplication mess in seconds."*
+    > — **Aditya Kulkarni**, Software Engineer, Bengaluru Tech Company [MOCKED]
 
 ---
 

@@ -81,13 +81,13 @@ export default function Home() {
           {/* Testimonial 1 */}
           <div className={styles.testimonialCard}>
             <p className={styles.quoteText}>
-              {'"Credex saved us $1,240/month in duplicate Claude and ChatGPT seats within 10 seconds of running their audit. Highly recommend for any lean team."'}
+              {'"As student developers, we were stacking ChatGPT Plus and Cursor Pro subscriptions without checking overlap. This free audit saved us cash instantly!"'}
             </p>
             <div className={styles.authorRow}>
-              <div className={styles.avatarMock}>SS</div>
+              <div className={styles.avatarMock}>SR</div>
               <div className={styles.authorMeta}>
-                <span className={styles.authorName}>Siddharth S.</span>
-                <span className={styles.authorTitle}>CTO, Vektor AI (Seed Stage)</span>
+                <span className={styles.authorName}>Siddharth Rao</span>
+                <span className={styles.authorTitle}>CSE Student & Hackathon Builder, Bengaluru</span>
               </div>
             </div>
           </div>
@@ -95,13 +95,13 @@ export default function Home() {
           {/* Testimonial 2 */}
           <div className={styles.testimonialCard}>
             <p className={styles.quoteText}>
-              {'"We realized half our developers were expensing individual Cursor Pro licenses on top of our enterprise GitHub Copilot subscription. This tool resolved the compliance mess in one click."'}
+              {'"Different developers on our backend team were expensing Cursor, Copilot, and ChatGPT on separate cards. This tool resolved the compliance and duplication mess in seconds."'}
             </p>
             <div className={styles.authorRow}>
-              <div className={styles.avatarMock}>ER</div>
+              <div className={styles.avatarMock}>AK</div>
               <div className={styles.authorMeta}>
-                <span className={styles.authorName}>Elena R.</span>
-                <span className={styles.authorTitle}>VP of Engineering, FluxCore (Series A)</span>
+                <span className={styles.authorName}>Aditya Kulkarni</span>
+                <span className={styles.authorTitle}>Software Engineer, Bengaluru Tech Company</span>
               </div>
             </div>
           </div>

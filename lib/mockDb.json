@@ -1,0 +1,359 @@
+{
+  "audit_csopm53rq2hsshd11adcxi": {
+    "id": "audit_csopm53rq2hsshd11adcxi",
+    "createdAt": "2026-05-22T15:50:06.650Z",
+    "teamSize": 1,
+    "useCase": "writing",
+    "toolsInput": [
+      {
+        "toolId": "copilot",
+        "planId": "business",
+        "seats": 1,
+        "monthlySpend": 19
+      }
+    ],
+    "results": {
+      "totalCurrentSpend": 19,
+      "totalRecommendedSpend": 19,
+      "totalMonthlySavings": 0,
+      "totalAnnualSavings": 0,
+      "isAlreadyOptimal": true,
+      "breakdown": [
+        {
+          "toolId": "copilot",
+          "toolName": "GitHub Copilot",
+          "currentPlan": "Business",
+          "currentSeats": 1,
+          "currentSpend": 19,
+          "recommendedPlan": "Business",
+          "recommendedSeats": 1,
+          "recommendedSpend": 19,
+          "recommendedAction": "Maintain Current Plan",
+          "savings": 0,
+          "reason": "Your subscription is sized correctly for your team and use case."
+        }
+      ]
+    },
+    "isPublic": false,
+    "leadEmail": "v@gmail.com",
+    "leadName": "V",
+    "leadRole": "founder",
+    "leadCompany": "v",
+    "aiSummary": "Our audit engine confirms your active AI tool licenses are fully optimized. Your active seats align perfectly with your team size of 1, and you have zero overlapping general-purpose chat or IDE autocompletion redundancies. Maintain your current setup and leverage pay-as-you-go keys as you scale to sustain operational efficiency."
+  },
+  "audit_x7dml447imbcsd1zvubd2f": {
+    "id": "audit_x7dml447imbcsd1zvubd2f",
+    "createdAt": "2026-05-22T15:52:26.974Z",
+    "teamSize": 3,
+    "useCase": "coding",
+    "toolsInput": [
+      {
+        "toolId": "cursor",
+        "planId": "pro",
+        "seats": 4,
+        "monthlySpend": 80
+      },
+      {
+        "toolId": "copilot",
+        "planId": "business",
+        "seats": 4,
+        "monthlySpend": 76
+      },
+      {
+        "toolId": "claude",
+        "planId": "team",
+        "seats": 10,
+        "monthlySpend": 300
+      },
+      {
+        "toolId": "chatgpt",
+        "planId": "plus",
+        "seats": 3,
+        "monthlySpend": 60
+      }
+    ],
+    "results": {
+      "totalCurrentSpend": 516,
+      "totalRecommendedSpend": 120,
+      "totalMonthlySavings": 396,
+      "totalAnnualSavings": 4752,
+      "isAlreadyOptimal": false,
+      "breakdown": [
+        {
+          "toolId": "cursor",
+          "toolName": "Cursor IDE",
+          "currentPlan": "Pro",
+          "currentSeats": 4,
+          "currentSpend": 80,
+          "recommendedPlan": "Pro",
+          "recommendedSeats": 3,
+          "recommendedSpend": 60,
+          "recommendedAction": "Reduce Seats to 3",
+          "savings": 20,
+          "reason": "You have 4 seats registered but your team size is 3. Saving 1 seat(s) cuts waste immediately."
+        },
+        {
+          "toolId": "copilot",
+          "toolName": "GitHub Copilot",
+          "currentPlan": "Business",
+          "currentSeats": 4,
+          "currentSpend": 76,
+          "recommendedPlan": "None",
+          "recommendedSeats": 0,
+          "recommendedSpend": 0,
+          "recommendedAction": "Cancel GitHub Copilot",
+          "savings": 76,
+          "reason": "You are already paying for Cursor. Cursor includes its own built-in next-generation code autocomplete, making Copilot redundant."
+        },
+        {
+          "toolId": "claude",
+          "toolName": "Claude AI",
+          "currentPlan": "Team",
+          "currentSeats": 10,
+          "currentSpend": 300,
+          "recommendedPlan": "Pro",
+          "recommendedSeats": 3,
+          "recommendedSpend": 60,
+          "recommendedAction": "Downgrade to Pro (Individual)",
+          "savings": 240,
+          "reason": "Claude Team bills a 5-seat minimum ($150/mo). Downgrading to 3 individual Pro account(s) saves $240/mo without losing core features."
+        },
+        {
+          "toolId": "chatgpt",
+          "toolName": "ChatGPT",
+          "currentPlan": "Plus",
+          "currentSeats": 3,
+          "currentSpend": 60,
+          "recommendedPlan": "None",
+          "recommendedSeats": 0,
+          "recommendedSpend": 0,
+          "recommendedAction": "Cancel ChatGPT",
+          "savings": 60,
+          "reason": "Your team is double-subscribed to Claude and ChatGPT. Since your primary use case is 'coding', Claude is superior. Consolidate and cancel ChatGPT."
+        }
+      ]
+    },
+    "isPublic": false,
+    "leadEmail": "siddharth@vektor.ai",
+    "leadName": "Siddharth S.",
+    "leadRole": "cto",
+    "leadCompany": "Vektor AI",
+    "aiSummary": "Your stack shows clear optimization opportunities, capturing $396/mo in redundant AI tool overhead. Transitioning Claude AI to the recommended Pro tier handles your developer throughput at a fraction of the cost. Consolidating overlapping assistants (Claude and ChatGPT) to support a dedicated 'coding' workflow cuts administrative waste without sacrificing output velocity. Implementing these adjustments immediately boosts startup cash efficiency."
+  },
+  "audit_vy74qsivrad55q7ijmy6r": {
+    "id": "audit_vy74qsivrad55q7ijmy6r",
+    "createdAt": "2026-05-22T15:52:42.221Z",
+    "teamSize": 3,
+    "useCase": "coding",
+    "toolsInput": [
+      {
+        "toolId": "cursor",
+        "planId": "pro",
+        "seats": 4,
+        "monthlySpend": 80
+      },
+      {
+        "toolId": "copilot",
+        "planId": "business",
+        "seats": 4,
+        "monthlySpend": 76
+      },
+      {
+        "toolId": "claude",
+        "planId": "team",
+        "seats": 10,
+        "monthlySpend": 300
+      },
+      {
+        "toolId": "chatgpt",
+        "planId": "plus",
+        "seats": 3,
+        "monthlySpend": 60
+      }
+    ],
+    "results": {
+      "totalCurrentSpend": 516,
+      "totalRecommendedSpend": 120,
+      "totalMonthlySavings": 396,
+      "totalAnnualSavings": 4752,
+      "isAlreadyOptimal": false,
+      "breakdown": [
+        {
+          "toolId": "cursor",
+          "toolName": "Cursor IDE",
+          "currentPlan": "Pro",
+          "currentSeats": 4,
+          "currentSpend": 80,
+          "recommendedPlan": "Pro",
+          "recommendedSeats": 3,
+          "recommendedSpend": 60,
+          "recommendedAction": "Reduce Seats to 3",
+          "savings": 20,
+          "reason": "You have 4 seats registered but your team size is 3. Saving 1 seat(s) cuts waste immediately."
+        },
+        {
+          "toolId": "copilot",
+          "toolName": "GitHub Copilot",
+          "currentPlan": "Business",
+          "currentSeats": 4,
+          "currentSpend": 76,
+          "recommendedPlan": "None",
+          "recommendedSeats": 0,
+          "recommendedSpend": 0,
+          "recommendedAction": "Cancel GitHub Copilot",
+          "savings": 76,
+          "reason": "You are already paying for Cursor. Cursor includes its own built-in next-generation code autocomplete, making Copilot redundant."
+        },
+        {
+          "toolId": "claude",
+          "toolName": "Claude AI",
+          "currentPlan": "Team",
+          "currentSeats": 10,
+          "currentSpend": 300,
+          "recommendedPlan": "Pro",
+          "recommendedSeats": 3,
+          "recommendedSpend": 60,
+          "recommendedAction": "Downgrade to Pro (Individual)",
+          "savings": 240,
+          "reason": "Claude Team bills a 5-seat minimum ($150/mo). Downgrading to 3 individual Pro account(s) saves $240/mo without losing core features."
+        },
+        {
+          "toolId": "chatgpt",
+          "toolName": "ChatGPT",
+          "currentPlan": "Plus",
+          "currentSeats": 3,
+          "currentSpend": 60,
+          "recommendedPlan": "None",
+          "recommendedSeats": 0,
+          "recommendedSpend": 0,
+          "recommendedAction": "Cancel ChatGPT",
+          "savings": 60,
+          "reason": "Your team is double-subscribed to Claude and ChatGPT. Since your primary use case is 'coding', Claude is superior. Consolidate and cancel ChatGPT."
+        }
+      ]
+    },
+    "isPublic": false,
+    "leadEmail": "siddharth@vektor.ai",
+    "leadName": "Siddharth S.",
+    "leadRole": "cto",
+    "leadCompany": "Vektor AI",
+    "aiSummary": "Your stack shows clear optimization opportunities, capturing $396/mo in redundant AI tool overhead. Transitioning Claude AI to the recommended Pro tier handles your developer throughput at a fraction of the cost. Consolidating overlapping assistants (Claude and ChatGPT) to support a dedicated 'coding' workflow cuts administrative waste without sacrificing output velocity. Implementing these adjustments immediately boosts startup cash efficiency."
+  },
+  "audit_j6b636jeufpcznziau1em9": {
+    "id": "audit_j6b636jeufpcznziau1em9",
+    "createdAt": "2026-05-22T16:07:29.876Z",
+    "teamSize": 11,
+    "useCase": "data",
+    "toolsInput": [
+      {
+        "toolId": "copilot",
+        "planId": "business",
+        "seats": 1,
+        "monthlySpend": 19
+      },
+      {
+        "toolId": "chatgpt",
+        "planId": "plus",
+        "seats": 1,
+        "monthlySpend": 20
+      }
+    ],
+    "results": {
+      "totalCurrentSpend": 39,
+      "totalRecommendedSpend": 39,
+      "totalMonthlySavings": 0,
+      "totalAnnualSavings": 0,
+      "isAlreadyOptimal": true,
+      "breakdown": [
+        {
+          "toolId": "copilot",
+          "toolName": "GitHub Copilot",
+          "currentPlan": "Business",
+          "currentSeats": 1,
+          "currentSpend": 19,
+          "recommendedPlan": "Business",
+          "recommendedSeats": 1,
+          "recommendedSpend": 19,
+          "recommendedAction": "Maintain Current Plan",
+          "savings": 0,
+          "reason": "Your subscription is sized correctly for your team and use case."
+        },
+        {
+          "toolId": "chatgpt",
+          "toolName": "ChatGPT",
+          "currentPlan": "Plus",
+          "currentSeats": 1,
+          "currentSpend": 20,
+          "recommendedPlan": "Plus",
+          "recommendedSeats": 1,
+          "recommendedSpend": 20,
+          "recommendedAction": "Maintain Current Plan",
+          "savings": 0,
+          "reason": "Your subscription is sized correctly for your team and use case."
+        }
+      ]
+    },
+    "isPublic": false,
+    "leadEmail": "v@gmail.com",
+    "leadName": "V",
+    "leadRole": "finance",
+    "leadCompany": "v",
+    "aiSummary": "Our audit engine confirms your active AI tool licenses are fully optimized. Your active seats align perfectly with your team size of 11, and you have zero overlapping general-purpose chat or IDE autocompletion redundancies. Maintain your current setup and leverage pay-as-you-go keys as you scale to sustain operational efficiency."
+  },
+  "audit_in12bqjqfeiowwppwls2gq": {
+    "id": "audit_in12bqjqfeiowwppwls2gq",
+    "createdAt": "2026-05-22T16:11:14.314Z",
+    "teamSize": 5,
+    "useCase": "coding",
+    "toolsInput": [
+      {
+        "toolId": "cursor",
+        "planId": "pro",
+        "seats": 1,
+        "monthlySpend": 20
+      },
+      {
+        "toolId": "copilot",
+        "planId": "business",
+        "seats": 1,
+        "monthlySpend": 19
+      }
+    ],
+    "results": {
+      "totalCurrentSpend": 39,
+      "totalRecommendedSpend": 20,
+      "totalMonthlySavings": 19,
+      "totalAnnualSavings": 228,
+      "isAlreadyOptimal": false,
+      "breakdown": [
+        {
+          "toolId": "cursor",
+          "toolName": "Cursor IDE",
+          "currentPlan": "Pro",
+          "currentSeats": 1,
+          "currentSpend": 20,
+          "recommendedPlan": "Pro",
+          "recommendedSeats": 1,
+          "recommendedSpend": 20,
+          "recommendedAction": "Maintain Current Plan",
+          "savings": 0,
+          "reason": "Your subscription is sized correctly for your team and use case."
+        },
+        {
+          "toolId": "copilot",
+          "toolName": "GitHub Copilot",
+          "currentPlan": "Business",
+          "currentSeats": 1,
+          "currentSpend": 19,
+          "recommendedPlan": "None",
+          "recommendedSeats": 0,
+          "recommendedSpend": 0,
+          "recommendedAction": "Cancel GitHub Copilot",
+          "savings": 19,
+          "reason": "You are already paying for Cursor. Cursor includes its own built-in next-generation code autocomplete, making Copilot redundant."
+        }
+      ]
+    },
+    "isPublic": false
+  }
+}

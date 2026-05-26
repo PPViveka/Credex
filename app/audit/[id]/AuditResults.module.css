@@ -373,9 +373,14 @@
   text-transform: uppercase;
 }
 
-.formGroup input, .formGroup select {
+.formGroup input {
   font-size: 0.9rem;
   padding: 10px 14px;
+}
+
+.formGroup select {
+  font-size: 0.9rem;
+  padding: 10px 36px 10px 14px;
 }
 
 .formError {
