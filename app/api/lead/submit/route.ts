@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import Anthropic from '@anthropic-ai/sdk';
 import { Resend } from 'resend';
 import { getAudit, updateAuditLead } from '../../../../lib/db';
+import { AuditResult } from '../../../../lib/types';
 
 // Initialize external SDK clients with graceful fallbacks
 const anthropicKey = process.env.ANTHROPIC_API_KEY || '';
@@ -153,10 +154,11 @@ Strict Guidelines:
     });
 
     return NextResponse.json({ success: true, aiSummary });
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Error submitting lead info:', error);
+    const errorMessage = error instanceof Error ? error.message : 'An error occurred while updating lead info.';
     return NextResponse.json(
-      { message: error.message || 'An error occurred while updating lead info.' },
+      { message: errorMessage },
       { status: 500 }
     );
   }
@@ -165,7 +167,7 @@ Strict Guidelines:
 /**
  * Creates a highly customized, finance-literate spend summary if Claude is unavailable.
  */
-function getLocalSummaryFallback(results: any, teamSize: number, useCase: string): string {
+function getLocalSummaryFallback(results: AuditResult, teamSize: number, useCase: string): string {
   // Find highest saving tool to write a customized paragraph
   const sortedBreakdown = [...results.breakdown].sort((a, b) => b.savings - a.savings);
   const topSaving = sortedBreakdown[0];
@@ -195,6 +197,7 @@ function logEmailFallback(email: string, monthlySavings: number, htmlContent: st
   console.log('\n=================== MOCK TRANSACTIONAL EMAIL SENT ===================');
   console.log(`[TO]: ${email}`);
   console.log(`[SUBJECT]: Your Startup AI Spend Audit: Save $${monthlySavings}/mo!`);
+  console.log(`[BODY SIZE]: ${htmlContent.length} characters`);
   console.log('[MOCK SMTP STATUS]: 250 OK - Transactional dispatch simulated.');
   console.log('=====================================================================\n');
 }

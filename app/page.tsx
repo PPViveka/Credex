@@ -65,7 +65,7 @@ export default function Home() {
           Stop Burning Cash on Redundant AI Tools.
         </h1>
         <p className={styles.subheadline}>
-          Instantly audit your startup's AI subscriptions, identify ghost seats, and capture up to 30% savings with defensible, number-backed reports.
+          {"Instantly audit your startup's AI subscriptions, identify ghost seats, and capture up to 30% savings with defensible, number-backed reports."}
         </p>
 
         {/* Core Interactive Audit Form */}
@@ -81,7 +81,7 @@ export default function Home() {
           {/* Testimonial 1 */}
           <div className={styles.testimonialCard}>
             <p className={styles.quoteText}>
-              "Credex saved us $1,240/month in duplicate Claude and ChatGPT seats within 10 seconds of running their audit. Highly recommend for any lean team."
+              {'"Credex saved us $1,240/month in duplicate Claude and ChatGPT seats within 10 seconds of running their audit. Highly recommend for any lean team."'}
             </p>
             <div className={styles.authorRow}>
               <div className={styles.avatarMock}>SS</div>
@@ -95,7 +95,7 @@ export default function Home() {
           {/* Testimonial 2 */}
           <div className={styles.testimonialCard}>
             <p className={styles.quoteText}>
-              "We realized half our developers were expensing individual Cursor Pro licenses on top of our enterprise GitHub Copilot subscription. This tool resolved the compliance mess in one click."
+              {'"We realized half our developers were expensing individual Cursor Pro licenses on top of our enterprise GitHub Copilot subscription. This tool resolved the compliance mess in one click."'}
             </p>
             <div className={styles.authorRow}>
               <div className={styles.avatarMock}>ER</div>

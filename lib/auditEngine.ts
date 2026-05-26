@@ -1,4 +1,4 @@
-import { AuditInput, AuditResult, ToolAuditResult, ToolInput, ToolId } from './types';
+import { AuditInput, AuditResult, ToolAuditResult, ToolId } from './types';
 
 // Centralized pricing registry matching PRICING_DATA.md
 export const PRICING_REGISTRY: Record<ToolId, Record<string, { name: string; pricePerSeat: number; minSeats?: number }>> = {
@@ -62,8 +62,6 @@ export function runAudit(input: AuditInput): AuditResult {
   
   // Check for dual IDE subscriptions (Cursor and GitHub Copilot)
   const hasCursor = activeToolIds.has('cursor');
-  const hasCopilot = activeToolIds.has('copilot');
-  const hasWindsurf = activeToolIds.has('windsurf');
 
   // Check for dual general assistants (Claude and ChatGPT retail subscriptions)
   const hasClaude = activeToolIds.has('claude');
@@ -76,7 +74,7 @@ export function runAudit(input: AuditInput): AuditResult {
     const toolPlans = PRICING_REGISTRY[toolId] || {};
     const planDetails = toolPlans[planId] || { name: planId, pricePerSeat: monthlySpend / (seats || 1) };
     
-    let currentSpend = monthlySpend;
+    const currentSpend = monthlySpend;
     totalCurrentSpend += currentSpend;
 
     let recPlan = planId;
@@ -191,7 +189,6 @@ export function runAudit(input: AuditInput): AuditResult {
     if (teamSize === 1 && (toolId === 'openai-api' || toolId === 'anthropic-api') && currentSpend > 40) {
       // If a solo dev is spending > $40/mo on API keys, they should buy flat-rate Claude/ChatGPT Pro!
       const isAnthropic = toolId === 'anthropic-api';
-      const targetTool = isAnthropic ? 'claude' : 'chatgpt';
       const targetPlan = isAnthropic ? 'pro' : 'plus';
       
       recSeats = 1;

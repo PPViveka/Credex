@@ -25,10 +25,11 @@ export async function POST(request: NextRequest) {
     const auditId = await createAudit(body);
 
     return NextResponse.json({ auditId });
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Error creating spend audit:', error);
+    const errorMessage = error instanceof Error ? error.message : 'An error occurred while calculating the spend audit.';
     return NextResponse.json(
-      { message: error.message || 'An error occurred while calculating the spend audit.' },
+      { message: errorMessage },
       { status: 500 }
     );
   }

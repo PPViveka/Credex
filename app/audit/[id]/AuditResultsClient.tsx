@@ -1,9 +1,9 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import styles from './AuditResults.module.css';
-import { ToolId, AuditResult } from '../../../lib/types';
+
 import { AuditRecord } from '../../../lib/db';
 
 interface AuditResultsClientProps {
@@ -15,41 +15,22 @@ export default function AuditResultsClient({ audit }: AuditResultsClientProps) {
   const searchParams = useSearchParams();
   
   // State for Privacy view (Private vs Public Shareable redact view)
-  const [isPublicMode, setIsPublicMode] = useState<boolean>(false);
+  const [isPublicMode, setIsPublicMode] = useState<boolean>(() => searchParams.get('view') === 'public');
   
   // Lead info inputs
-  const [email, setEmail] = useState('');
-  const [name, setName] = useState('');
-  const [company, setCompany] = useState('');
-  const [role, setRole] = useState('founder');
+  const [email, setEmail] = useState(audit.leadEmail || '');
+  const [name, setName] = useState(audit.leadName || '');
+  const [company, setCompany] = useState(audit.leadCompany || '');
+  const [role, setRole] = useState(audit.leadRole || 'founder');
   
   // Action states
-  const [leadSubmitted, setLeadSubmitted] = useState<boolean>(false);
-  const [aiSummary, setAiSummary] = useState<string>('');
+  const [leadSubmitted, setLeadSubmitted] = useState<boolean>(!!audit.leadEmail);
+  const [aiSummary, setAiSummary] = useState<string>(audit.aiSummary || '');
   const [isUnlocking, setIsUnlocking] = useState<boolean>(false);
   const [leadError, setLeadError] = useState<string | null>(null);
   const [linkCopied, setLinkCopied] = useState<boolean>(false);
   const [newsletterSubscribed, setNewsletterSubscribed] = useState<boolean>(false);
   const [newsletterEmail, setNewsletterEmail] = useState<string>('');
-
-  // Hydrate views and check URL parameters on load
-  useEffect(() => {
-    // If the URL has a public view parameter, default to public redact mode
-    const viewParam = searchParams.get('view');
-    if (viewParam === 'public') {
-      setIsPublicMode(true);
-    }
-
-    // Hydrate existing lead details if present in the database audit record
-    if (audit.leadEmail) {
-      setLeadSubmitted(true);
-      setEmail(audit.leadEmail);
-      if (audit.leadName) setName(audit.leadName);
-      if (audit.leadCompany) setCompany(audit.leadCompany);
-      if (audit.leadRole) setRole(audit.leadRole);
-      if (audit.aiSummary) setAiSummary(audit.aiSummary);
-    }
-  }, [audit, searchParams]);
 
   const handleLeadSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -86,9 +67,10 @@ export default function AuditResultsClient({ audit }: AuditResultsClientProps) {
       
       // Update local storage record if needed
       localStorage.setItem(`credex_audit_unlocked_${audit.id}`, 'true');
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error(err);
-      setLeadError(err.message || 'Connection failed. Please try again.');
+      const errorMessage = err instanceof Error ? err.message : 'Connection failed. Please try again.';
+      setLeadError(errorMessage);
     } finally {
       setIsUnlocking(false);
     }
@@ -461,7 +443,7 @@ export default function AuditResultsClient({ audit }: AuditResultsClientProps) {
               </button>
             </form>
             {newsletterSubscribed && (
-              <span className={styles.subscribedNote}>Welcome! You'll receive our next bi-weekly billing brief.</span>
+              <span className={styles.subscribedNote}>{"Welcome! You'll receive our next bi-weekly billing brief."}</span>
             )}
           </div>
         )}

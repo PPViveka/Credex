@@ -54,8 +54,6 @@ describe('AI Spend Audit Engine - Finance-Literate Unit Tests', () => {
     const result = runAudit(input);
 
     expect(result.totalMonthlySavings).toBe(110); // Downgrade to 2 Pro seats * $20 = $40. Savings = 150 - 40 = $110
-    expect(cursorResult => result.breakdown.find(t => t.toolId === 'claude')!);
-    
     const claudeResult = result.breakdown.find(t => t.toolId === 'claude')!;
     expect(claudeResult.recommendedPlan).toBe('Pro');
     expect(claudeResult.recommendedSeats).toBe(2);

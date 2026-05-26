@@ -1,7 +1,7 @@
 import { createClient } from '@supabase/supabase-js';
 import fs from 'fs';
 import path from 'path';
-import { AuditInput, AuditResult } from './types';
+import { AuditInput, AuditResult, ToolInput } from './types';
 import { runAudit } from './auditEngine';
 
 // Interfaces for DB records
@@ -10,7 +10,7 @@ export interface AuditRecord {
   createdAt: string;
   teamSize: number;
   useCase: string;
-  toolsInput: any;
+  toolsInput: ToolInput[];
   results: AuditResult;
   leadEmail?: string;
   leadName?: string;
@@ -88,7 +88,7 @@ export async function createAudit(input: AuditInput): Promise<string> {
 
   if (isSupabaseConfigured && supabase) {
     console.log('[DB] Storing audit record to Supabase...');
-    const { data, error } = await supabase
+    const { error } = await supabase
       .from('audits')
       .insert({
         id: auditId,

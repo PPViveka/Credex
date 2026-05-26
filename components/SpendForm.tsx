@@ -46,6 +46,7 @@ export default function SpendForm() {
 
   // Load from localStorage on mount
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
     try {
       const savedMetadata = localStorage.getItem('credex_audit_metadata');
@@ -173,7 +174,7 @@ export default function SpendForm() {
     setError(null);
 
     const activeTools: ToolInput[] = Object.entries(toolsState)
-      .filter(([_, state]) => state.active)
+      .filter(([, state]) => state.active)
       .map(([id, state]) => ({
         toolId: id as ToolId,
         planId: state.planId,
@@ -210,9 +211,10 @@ export default function SpendForm() {
       
       // Redirect to the newly calculated Audit Result page
       router.push(`/audit/${data.auditId}`);
-    } catch (e: any) {
+    } catch (e: unknown) {
       console.error(e);
-      setError(e.message || 'An unexpected connection error occurred.');
+      const errorMessage = e instanceof Error ? e.message : 'An unexpected connection error occurred.';
+      setError(errorMessage);
       setIsSubmitting(false);
     }
   };
@@ -280,7 +282,7 @@ export default function SpendForm() {
         {/* Step 1: Core Startup Metadata */}
         {currentStep === 1 && (
           <div>
-            <h2 className={styles.stepTitle}>Let's Size Your Startup</h2>
+            <h2 className={styles.stepTitle}>{"Let's Size Your Startup"}</h2>
             <p className={styles.stepSubtitle}>We need standard team context to calculate correct usage-fit allocations.</p>
             
             <div className={styles.fieldGrid}>
